@@ -1,8 +1,17 @@
 import Link from "next/link";
 
+type Post = {
+    id: string;
+    title: string;
+};
+
+type Response = {
+    posts: Post[];
+};
+
 export default async function Page() {
     const response = await fetch("https://dummyjson.com/posts?limit=10");
-    const data = await response.json();
+    const data: Response = await response.json();
 
     return (
         <main className="text-center pt-16 px-5">
