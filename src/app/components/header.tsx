@@ -14,20 +14,21 @@ const navLinks = [
 
 export default function Header() {
     return (
-        <header>
-            <Image 
-                src="https://avatars.githubusercontent.com/u/55962427?v=4&size=35"
-                alt="Blog logo"
-                className="rounded-full w-[35px] h-[35px]"
-                width="35"
-                height="35"
-            />
-        
+        <header className="flex justify-between items-center py-4 px-7 border-b">
+            <Link href="/">
+                <Image 
+                    src="https://avatars.githubusercontent.com/u/55962427?v=4&size=35"
+                    alt="Blog logo"
+                    className="rounded-full w-[35px] h-[35px]"
+                    width="35"
+                    height="35"
+                />
+            </Link>
             <nav>
-                <ul>
+                <ul className="flex gap-x-5 text-[14px]">
                 {navLinks.map((link) => (
                     <li key={link.href}>
-                        <Link href={link.href}>{link.label}</Link>
+                        <Link className="text-green-400" href={link.href}>{link.label}</Link>
                     </li>
                 ))}
                 </ul>
